@@ -1,1 +1,0 @@
-Resource Record www Type CNAME added successfully. New resource record id 145941704  
