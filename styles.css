@@ -94,15 +94,26 @@ body {
     z-index: 1;
 }
 
-.hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 /* Section Styles */
 section {
+    height: 100vh; /* Her bölüm tam ekran kaplar */
     padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* Pseudo-element için gerekli */
+}
+
+section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 160%; /* Çizginin genişliği tam ekran */
+    height: 2px; /* Çizginin kalınlığı */
+    background-color: var(--primary); /* Çizginin rengi */
+    opacity: 0.1; /* Çizginin opaklığı */
 }
 
 .section-title {
@@ -194,4 +205,19 @@ section {
     .nav-links {
         gap: 1rem;
     }
+}
+
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background-color: #1d421c;
+    z-index: 200;
+    transition: width 0.3s ease;
+}
+.resim-boyut{
+    width: 750px;
+    height: 500px;
 }
